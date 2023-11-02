@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        超链接标签
+            a
+                href  用于定义要跳转的目标资源的地址
+                    1. 完整的url
+                    2. 相对路径  以当前资源的 所在路径 为出发点去寻找目标资源
+                                ./ 表示当前资源的所在路径，可以省略
+                                ../ 表示当前资源的上一层路径
+                    3. 绝对路径  使用固定的位置为出发点去寻找目标资源：localhost：5500
+                                以/开头
+                target  用于定义目标打开资源的方式
+                    _self 在当前窗口打开目标资源
+                    _blank 在新窗口打开目标资源
+     -->
+     <a href="http://www.baidu.com" target="_blank">百度</a>
+     <!-- 相对路径 -->
+     <a href="02标题段落换行.html" target="_blank">02标题段落换行</a>
+     <!-- 绝对路径 -->
+     <a href="/demo1_html\03有序无序列表.html" target="_self">03有序无序列表</a>
+     <!-- 测试相对路径返回 -->
+     <a href="a/b/test.html">返回</a>
+     <!-- 测试绝对路径返回 -->
+     <a href="/demo1_html/a/b/test.html">返回</a>
+</body>
+</html>

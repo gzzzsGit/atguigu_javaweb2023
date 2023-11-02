@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        form
+            action  定义数据的提交地址
+                    1  url
+                    2  绝对地址
+                    3  相对地址
+            method  定义数据的提交方式
+                    GET(默认方式) 
+                        1 参数会以键值对形式在url后提交   url?key=xxx&value=xxx
+                        2 数据直接暴露在地址栏上,相对不安全
+                        3 地址栏长度有限制,所以提交的数据量不大
+                        4 地址栏上.只能是字符，不能提交文件
+                        5 效率比post高
+                    POST  
+                        1 参数默认不放到url后 
+                        2 数据不会直接暴露在地址栏上,相对安全
+                        3 数据是单独打包通过请求体发送，提交的数据量比较大
+                        4 请求体中,可以是字符,也可以字节数据，可以提交文件
+                        5 相比于get效率略低一些
+
+
+
+        表单项标签
+        表单项标签一定要定义name属性，该属性用于明确提交时的参数名即key
+        还需要定义value属性，该属性用于明确提交时的实参(text、password类型的value会根据输入的内容得到，所以可以不写)
+        input
+            type    输入信息的表单项类型
+                    text        单行普通文本框
+                    password    密码框
+                    submit      提交按钮  value默认为提交
+                    reset       重置按钮  value默认为重置
+                    radio       单选框  多个选项选其一
+                                        多个单选框使用相同的name属性值，则会产生互斥效果
+                                        checked 默认选中，相当于checke="true",checke="checked"(当属性名和属性值相同时，可以只写属性名)
+                                                如果有多个单选框都选中了checked则默认的是最后一个checked
+                    checkbox    复选框  多个选项选多个
+                    hidden      隐藏域  不显示在页面上，提交时会携带
+        
+        textarea    文本域      多行文本框
+                    没有value属性，提交的是双标签中间的内容
+        
+        select      下拉框
+                    option  选项
+                            selected    默认选中
+
+        file        文件上传框
+     -->
+    <form action="08welcome.html" method="get">
+        <!-- 添加表单项标签  用户输入信息的标签 -->
+        <!-- 希望用提交一些特定的信息,但是考虑安全问题或者是用户操作问题,不希望该数据发生改变
+            readonly    只读    提交时携带
+            disabled    不可用  提交时不携带
+        -->
+        <input type="hidden" name="id" value="123">
+        <input type="text" name="pid" value="456" readonly><br>
+        <input type="text" name="tid" value="798" disabled><br>
+
+        用户名:<input type="text" name="username" /><br>
+        密码: <input type="password" name="password"/><br>
+        性别:
+            <input type="radio" name="gender" value="1">男
+            <input type="radio" name="gender" value="0">女
+            <br>
+        爱好:
+            <input type="checkbox" name="hobby" value="1" checked>篮球
+            <input type="checkbox" name="hobby" value="2">足球
+            <input type="checkbox" name="hobby" value="3">羽毛球
+            <input type="checkbox" name="hobby" value="4">乒乓
+            <br>
+        个人简介:
+            <textarea name="introduce" style="width: 300px;height: 100px;">这是一个个人简介</textarea>
+            <br>
+        籍贯:
+        <select name="province" >
+            <option value="1">京爷</option>
+            <option value="2">沪爷</option>
+            <option value="3">屌丝</option>
+            <option value="4" selected>请选择</option>
+        </select>
+        <br>
+        选择头像:
+            <input type="file">
+        <br>
+        <input type="submit" value="登录">
+        <input type="reset" value="清空">
+
+
+    </form>
+
+</body>
+</html>
