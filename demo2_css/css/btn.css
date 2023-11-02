@@ -1,0 +1,10 @@
+input{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    color: red;
+    font-family:'华文彩云';
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
