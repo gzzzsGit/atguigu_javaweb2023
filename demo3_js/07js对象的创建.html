@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            创建对象的语法
+            方式1   new Object()
+            
+            方式2   {属性名：属性值,...,...函数名：function(){}}
+                    其中属性名可以用双引号引起来，与json相同
+        */
+
+        // var person = new Object()
+        
+        // // 对象的属性存在，则设置属性，否则直接添加该属性
+        // person.name = "张三"
+        // person.age = 10
+
+        // // 对象的方法同样是不存在就直接添加方法
+        // person.eat = function(food){
+        //     console.log(this.age+"岁"+this.name+"正在吃"+food)
+        // }
+
+        // //访问属性
+        // console.log(person.name)
+        // console.log(person.age)
+
+        // //调用方法
+        // person.eat("苹果")//10岁张三正在吃苹果
+
+        var person = {
+            name:"张三",
+            age: 10,
+            eat: function(food){
+                console.log(this.age+"岁"+this.name+"正在吃"+food)
+            }
+        }
+        
+        person.eat("香蕉")//10岁张三正在吃香蕉
+    </script>
+</head>
+<body>
+</body>
+</html>
