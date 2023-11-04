@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outerDiv{
+            width: 500px;
+            height: 300px;
+            border: 1px solid rgb(112, 136, 112);
+            background-color: beige;
+            /* 设置上下外边距为10，左右外边距自动也就是平均分，所以是居中 */
+            margin: 10px auto;
+        }
+
+        .innerDiv{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            float: left;
+        }
+        
+        .d1{
+            background-color: aqua;
+            /* margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding-top: 20px;
+            padding-left: 20px; */
+            /* 顺序为上右下左 */
+            padding: 30px 20px 10px 5px;
+        }
+
+        .d2{
+            background-color: red;
+            /* 设置上下左右的外边距都是10 */
+            margin: 10px;
+        }
+
+        .d3{
+            background-color: yellow;
+            /* 设置上下的外边距都是10，左右边距是20 */
+            margin: 10px 20px;
+        }
+
+        /* 
+        width、height定义的是容量
+        border相当于在容量外面加边框
+        边框 => 外边
+        容量与边框之间 => 内边
+        margin设置的是外边距
+        padding设置的是内边距
+
+        内外边距都不会影响容量，所以设置内边距会导致容量看起来变大了（看起来相当于多出了padding的部分）
+
+        具体可以查看F12对应元素格式
+        */
+    </style>
+</head>
+<body>
+    <div class="outerDiv">
+        <div class="innerDiv d1">innerDiv a</div>
+        <div class="innerDiv d2">innerDiv b</div>
+        <div class="innerDiv d3">innerDiv c</div>
+    </div>
+
+</body>
+</html>

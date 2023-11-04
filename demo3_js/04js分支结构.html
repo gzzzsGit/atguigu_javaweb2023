@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            if
+
+            switch
+        */
+
+        // 根据月份输出季节
+
+        //prompt返回的结果就是用户在窗口上输入的值，以string类型返回
+        /*
+        var monthstr = prompt("请输入月份:")
+        console.log(typeof monthstr)
+
+        var month = Number.parseInt(monthstr)
+        console.log(typeof month)
+
+        if( month==12||month==1||month==2){
+            console.log("冬天")
+        }else if(month <=5 && month>=3){
+            console.log("春眠不觉晓")
+        }else if(month <=8 && month>=6){
+            console.log("夏日炎炎")
+        }else if(month <=11 && month>=9){
+            console.log("风急天高猿啸哀")
+        }else
+        console.log("invalid")
+        */
+
+        /*
+        if  类似于python
+            1   非空字符串会判断为true
+            2   非空对象会判断为true
+            3   非0number会判断为true
+        */
+        
+        if ('false') {
+            console.log("true")//true
+        }else{
+            console.log("false")
+        }
+        
+        if(new Object()){
+            console.log("true")//true
+        }else{
+            console.log("false")
+        }
+
+        //  switch结构语法与java相似
+        //  prompt第二个参数是输入框的提示语
+        var monthStr=prompt("请输入月份","例如:10 ");
+        var month= Number.parseInt(monthStr)
+        switch(month){
+            case 3:
+            case 4:
+            case 5:
+                console.log("春季");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                console.log("夏季");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                console.log("秋季");
+                break;
+            case 1:
+            case 2:
+            case 12:
+                console.log("冬季");
+                break;
+            default :
+                console.log("月份有误")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

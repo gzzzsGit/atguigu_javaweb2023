@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .innerDiv{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+        
+        .d1{
+            background-color: aqua;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+
+        .d2{
+            background-color: red;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .d3{
+            background-color: yellow;
+        }
+
+        /* 
+        position:
+                static      默认
+                absolute    绝对位置，相对于浏览器窗口？
+                relative    相对元素原本的位置，且元素原本的位置不会被占用
+                fixed       相对浏览器窗口的位置，且元素原本的位置会被占用
+
+        left/right      距离左/右边界的距离
+        top/bottom      距离上/下边界的距离
+
+        */
+        
+    </style>
+</head>
+<body>
+    <div class="innerDiv d1">innerDiv a</div>
+    <div class="innerDiv d2">innerDiv b</div>
+    <div class="innerDiv d3">innerDiv c</div>
+</body>
+</html>
