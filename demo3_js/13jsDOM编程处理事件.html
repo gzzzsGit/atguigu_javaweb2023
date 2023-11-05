@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            DOM编程触发
+        */
+       function ready(){
+        // 通过dom获得要操作的元素
+        var btn = document.getElementById("btn1")
+        // 绑定一个单击事件
+        btn.onclick = function(){
+            alert("单击按钮")
+        }
+       }
+    </script>
+
+</head>
+<body onload="ready()">
+    <!-- 如果不绑定onload方法，而是直接在head内script里面写dom则会报错，因为代码从上往下执行，会出现btn1还未定义-->
+    <button id="btn1">按钮</button>
+
+</body>
+</html>

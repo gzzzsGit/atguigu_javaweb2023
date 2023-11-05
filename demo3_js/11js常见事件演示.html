@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            console.log("单击函数1")
+        }
+
+        function fun2(){
+            console.log("单击函数2")
+        }
+
+        function fun3(){
+            console.log("双击函数")
+        }
+
+        function fun4(){
+            console.log("鼠标悬停");
+        }
+
+        function fun5(){
+            console.log("鼠标移动");
+        }
+
+        function fun6(){
+            console.log("鼠标离开");
+        }
+
+        function fun7(){
+            console.log("键盘按下");
+        }
+
+        function fun8(){
+            console.log("键盘抬起");
+        }
+
+        function testFocus(){
+            console.log("获得焦点");
+        }
+
+        function testBlur(){
+            console.log("失去焦点");
+        }
+
+        function testChange1(value){
+            console.log("内容改为了:"+value);
+        }
+
+        function testChange2(value){
+            console.log("选项改成了:"+value);
+        }
+
+        //阻止表单提交的方式1
+        function testSumit(){
+            alert("表单发生提交了")
+            var res = confirm("确定提交表单吗?")
+            if(!res)
+            // 在这里可以阻止表单的提交
+            event.preventDefault()//阻止组件的默认行为,即组织表单提交
+        }
+
+        // 阻止表单提交的方式2
+        function testSumit2(){
+            var res= confirm("确认提交表单吗?")
+            if(!res)
+                return false
+            else
+                return true
+        }
+
+        function testReset(){
+            alert("表单重置了")
+        }
+        /*
+            事件的绑定方式
+                1   通过元素的属性绑定  on***    
+                2   通过DOM编程动态绑定
+                注意事项:
+                    1   一个事件可以同时绑定多个函数
+                    2   一个元素可以同时绑定多个事件 
+            
+            常见的事件
+                1   鼠标事件    onclick ondblclick  onmouseover onmousemove onmouseleave 
+                2   键盘事件    onkeydown   onkeyup
+                3   表单事件    onfocus 获得焦点    onblur 失去焦点  onchange 内容改变并失去焦点
+                4   页面加载事件（html页面加载完毕后，浏览器自己执行）    onload
+
+            事件的触发
+                1   行为触发
+                2   DOM编程触发
+                
+        */
+
+        /*
+            弹窗的三种方式
+            aler()信息提示框
+            prompt()信息输入框
+            confirm()信息确认框     返回boolean类型
+        */
+    </script>
+</head>
+<body>
+    <!-- 注意,使用方式2阻止提交时需要在绑定方法时加上return,方式1则不需要 -->
+    <form action="01js引入方式.html" method="get" onsubmit="return testSumit2()" onreset="testReset()">
+        用户昵称: <input type="text" name="reaName" onfocus="testFocus()" onblur="testBlur()" onchange="testChange1(this.value)" ><br>
+        登陆账号: <input type="text" name="accountName"><br>
+        选择籍贯: 
+        <select name="province" onchange="testChange2(value)">
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">广州</option>
+        </select>
+        <input type="submit" value="注册">
+        <input type="reset" value="重置">
+    </form>
+
+    <!-- 双击也会触发两次单击事件 -->
+    <input 
+        type="button"
+        value="按钮"
+        onclick="fun1(),fun2()"
+        ondblclick="fun3()"
+    >
+    <br>
+    <img src="/demo3_js/img/image1.jpg" title="img1" alt="图片加载失败" 
+    onmouseover="fun4()" onmousemove= "fun5()"  onmouseleave="fun6()"
+    >
+
+    <input type="text" onkeydown="fun7()"   onkeyup="fun8()">
+</body>
+</html>

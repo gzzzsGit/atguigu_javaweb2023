@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            时间和日期   找Date()
+            基础的数据处理函数      找Number()对象
+        */
+        var date = new Date()
+        console.log(date);
+
+        console.log(date.getFullYear());
+        // 范围是0-11，所以对应的月份要加1
+        console.log(date.getMonth()+1);
+        // 获取日，注意不是getDay(),后者是获取星期几
+        console.log(date.getDate());
+        //获取时分秒
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+
+        date.setFullYear(2001)
+        date.setMonth(10)
+        date.setDate(5)
+        date.setHours(9)
+        date.setMinutes(37)
+        date.setSeconds(54)
+        console.log(date)
+
+        var str = '10.1'
+        var res = 10+str
+        console.log(res);//1010
+        res = 10+Number.parseInt(str)
+        console.log(res);//20
+        res = 10+Number.parseFloat(str)
+        console.log(res);//20.1
+</script>
+</head>
+<body>
+    
+</body>
+</html>

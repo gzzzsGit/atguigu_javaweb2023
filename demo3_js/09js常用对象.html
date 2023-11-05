@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            常用对象
+
+                1   数组
+                    1）数组的创建方式
+                        ①   var arr = new Array()
+                        ②   var arr = new Array(lenth)
+                        ③   var arr = new Array(x,x,x) / var arr = [x,x,x]
+                    2）数组的API
+
+        */
+
+        var fruits1 = ["apple","orange","banana"]
+        var fruits2 = ["荔枝","杨梅","榴莲","李子","榴莲","苹果"]
+        //返回一个新的连接好的数组，不改变原来的
+        var fruitsAll = fruits1.concat(fruits2)
+        console.log(fruits1);
+        console.log(fruits2);
+        console.log(fruitsAll);
+
+        //移除并返回最后一个元素
+        var res = fruitsAll.pop()
+        console.log(res)
+        console.log(fruitsAll);
+
+        //从尾端增加元素并返回长度
+        var newLenth = fruitsAll.push("葡萄")
+        console.log(newLenth);
+        console.log(fruitsAll);
+
+        //查找榴莲的第一个索引
+        var index1 = fruitsAll.indexOf("榴莲")
+        //查找榴莲的最后一个索引
+        var index2 = fruitsAll.lastIndexOf("榴莲")
+        console.log(index1);
+        console.log(index2);
+
+        // 反转
+        fruitsAll.reverse()
+        console.log(fruitsAll);
+
+        // 转换为字符串,默认连接符是','
+        console.log(fruitsAll.join());
+
+        // 截取数据,slice(begin,end),不包括end
+        console.log(fruitsAll.slice(2,4));
+          
+        // 删除或增加元素
+        console.log(fruitsAll);//['葡萄', '榴莲', '李子', '榴莲', '杨梅', '荔枝', 'banana', 'orange', 'apple']
+        //splice(beginIndex,要删除的元素个数,要添加的元素,添加的元素...)
+        fruitsAll.splice(2,1,"add1","add2")// ['葡萄', '榴莲', 'add1', 'add2', '榴莲', '杨梅', '荔枝', 'banana', 'orange', 'apple']
+        console.log(fruitsAll);
+
+        // //创建数组
+        // var arr = new Array()
+        // console.log(arr)
+        // console.log(arr.length);
+        // var arr = new Array(5)
+        // console.log(arr)
+        // var arr = [1,2,3]
+
+        // //向数组添加数据,可以添加不同种类
+        // arr[0] = "张三"
+        // arr[1] = 10
+        // arr[9] = true
+        // //空缺的数组位置会自动是空属性
+        // console.log(arr[8]);//undefined
+        // console.log(arr.length);//10
+        // arr.length=20
+        // console.log(arr);
+        // console.log(arr.length);//20
+
+        /*
+            其他API
+        */
+
+        //布尔类型
+        var bool= new Boolean(1)
+
+        //将boolean类型转换为string
+        console.log(bool.toString());//true
+        console.log(typeof bool.toString());//string
+
+        //valueOf返回Boolean对象的原始值
+        console.log(bool.valueOf());//true
+        console.log(typeof bool.valueOf());//boolean
+
+        //
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
