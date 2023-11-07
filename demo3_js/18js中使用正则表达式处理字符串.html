@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // /* 验证 */
+        // // 定义正则表达式
+        // var reg = /e/
+        // // 定义一个测试字符串
+        // var str = "hello world"
+
+        // //校验是否符合正则的规则, 调用test()
+        // console.log(reg.test(str));//true
+
+        // /* 匹配 */
+        // var reg = /o/
+        // var str = "hello world"
+        // var result = str.match(reg)
+        // console.log(result);//返回一个数组['o',index:4,xxx,xxx...]
+
+        // //g代表global 全局匹配
+        // var reg = /o/g
+        // console.log(str.match(reg));//返回['o', 'o']
+
+        // // 替换
+        // var reg = /o/
+        // var str = "hello world"
+        // var newStr1 = str.replace(reg,'@')
+        // console.log(newStr1);//hell@ world
+        // var reg = /o/g
+        // var newStr2 = str.replace(reg,'@')
+        // console.log(newStr2);//hell@ w@rld
+        
+        // //i代表忽略大小写
+        // var reg1 = /o/g
+        // var reg2 = /o/gi
+        // var str = 'HELLO WORLD'
+        // console.log(str.replace(reg1,'@'));//HELLO WORLD
+        // console.log(str.replace(reg2,'@'));//HELL@ W@RLD
+
+
+        // var str1 = 'Java love me'
+        // var str2 = 'I lova java'
+        // var str3 = 'Java'
+        
+        // // ^表示以...开头
+        // // $表示以...结尾
+        // var reg1 = /^java/i
+        // var reg2 = /java$/i
+        // // 既限制了开头也限制了结尾，所以限制了长度
+        // var reg3 = /^java$/i
+        // console.log(reg1.test(str1));//true
+        // console.log(reg2.test(str2));//true
+        // console.log(reg3.test(str1));//false
+        // console.log(reg3.test(str2));//false
+        // console.log(reg3.test(str3));//true
+
+
+        //校验用户名是否合法
+        /**
+         * 1    必须是字母开头
+         * 2    长度必须是6-10位
+         * 3    后面其他字符可以是大小写字母，数字和下划线
+        */
+        var str  = 's235153'
+        // []里面的是是范围，包含的情况都可以验证，不同范围之间直接写在一起，如a-z_意思是a到z或者_
+        // {begin,end}指上一个规则重复几到几次隔开，如果是固定的次数，则可以直接写{times}
+        var reg  = /^[a-zA-Z][a-zA-Z0-9_]{5,9}$/
+        console.log(reg.test(str));//true
+
+
+        /* 简写符号 */
+        // n+ 匹配任何包含一个以上n的字符串
+        var str = "s4444444444444444444444444444444444"
+        var reg = /^[a-zA-Z][a-zA-Z0-9_]+$/
+        console.log(reg.test(str));//true
+
+        // n*  匹配任何包含0个以上n的字符串
+        var str = "s8135@"
+        var reg = /^s[a-zA-Z0-9_]*@$/
+        console.log(reg.test(str));//true
+        console.log(reg.test("g8135@"));//false
+
+        // n?  匹配任何包含0个或者1个n的字符串
+        var reg = /^[a-zA-Z][a-zA-Z0-9_]?$/
+        console.log(reg.test("s4"));//true
+        console.log(reg.test("s44"));//false
+
+        // \w 查找数字、字母及下划线
+        // \W 查找非单词字符(就是除了上面的)
+        var reg1 = /\w/
+        var reg2 = /\W/
+        console.log(reg1.test("a"));//true
+        console.log(reg2.test("_"));//false
+        console.log(reg2.test("@"));//true
+
+        // \d 查找数字
+        // \D 查找非数字字符
+        var reg1 = /\d/
+        var reg2 = /\D/
+        console.log(reg1.test("1"));//true
+        console.log(reg2.test("@"));//true
+
+        // \s 查找空白字符
+        // \S 查找非空白字符
+        var reg1 = /\s/
+        var reg2 = /\S/
+        console.log(reg1.test(" "));//true
+        console.log(reg2.test("\t"));//false  还有\r \n ' '
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

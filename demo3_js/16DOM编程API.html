@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 1    获得document    dom树
+         *          window.document
+         * 2    从document中获取要操作的元素
+         *      ① 直接获取
+         *          var ele1 = document.getElementById("username")//根据元素的id值获取页面上唯一一个元素
+         *          var eles = document.getElementsByTagName("input")// 根据元素的标签名获取多个同名元素
+         *          var eles = document.getElementsByName("aaa")// 根据元素的name属性获取多个元素
+         *          var eles = document.getElementsByClassName("a")// 根据元素的class属性获取多个元素
+         *      ② 间接获取
+         *          var cs = div01.children
+         *          var firstChild = div01.firstElementChild //通过父元素获取第一个子元素
+         *          var lastChild = div01.lastElementChild //通过父元素获取最后一个子元素
+         *          var parent = password.parentElement//通过子元素获取父元素
+         *          var pbro = password.previousElementSibling //获取前一个元素
+         *          var nbro = password.nextElementSibling //获取后一个元素
+         * 3    对元素进行操作
+         *      ① 操作元素的属性
+         *      ② 操作元素的样式
+         *      ③ 操作元素的文本
+         *      ④ 增删元素
+         */
+
+        function fun1(){
+            // 1   获取document
+            // 2   通过document获取元素
+            var ele1 = document.getElementById("username")//根据元素的id值获取页面上唯一一个元素
+            console.log(ele1);
+        }
+
+        function fun2(){
+            var eles = document.getElementsByTagName("input")// 根据元素的标签名获取多个同名元素
+            for (let i = 0; i < eles.length; i++) {
+                console.log(eles[i]); 
+            }
+        }
+        
+        function fun3(){
+            var eles = document.getElementsByName("aaa")// 根据元素的name属性获取多个元素
+            for (let i = 0; i < eles.length; i++) {
+                console.log(eles[i]);
+            }
+        }
+        
+        function fun4(){
+            var eles = document.getElementsByClassName("a")// 根据元素的class属性获取多个元素
+            for (let i = 0; i < eles.length; i++) {
+                console.log(eles[i]);
+            }
+        }
+
+        function fun5(){
+            // 获取父元素
+            var div01 = document.getElementById("div01")
+            // 获取所有子元素
+            var cs = div01.children
+            for (let i= 0; i< cs.length; i++) {
+                console.log(cs[i]);
+            }
+
+            console.log(div01.firstElementChild)//通过父元素获取第一个子元素
+            console.log(div01.lastElementChild)//通过父元素获取最后一个子元素
+        }
+
+        function fun6(){
+            //获取子元素
+            var password = document.getElementById("password")
+            console.log(password.parentElement);//通过子元素获取父元素
+        }
+
+        function fun7(){
+            //获取子元素
+            var password = document.getElementById("password")
+            console.log(password.previousElementSibling);//获取前一个元素
+            console.log(password.nextElementSibling);//获取后一个元素
+        }
+    </script>
+</head>
+<body>
+    <div id="div01">
+        <input type="text" id="username" name="aaa"/>
+        <input type="text" id="password" name="aaa"/>
+        <input type="text" class="a" id="email"/>
+        <input type="text" class="a" id="address"/>
+    </div>
+    <input type="text" /><br>
+    <hr>
+    <input type="button"  value="根据父元素获取子元素" onclick="fun5()" id="btn01"/>
+    <input type="button" value="根据子元素获取父元素" onclick="fun6()" id="btn02"/>
+    <input type="button" value="通过当前元素获取兄弟元素" onclick="fun7()" id="btn03"/>
+    <input type="button" value="根据class属性获取多个元素" onclick="fun8()" id="btn04"/>
+    <hr>
+    <input type="button"  value="根据id获取指定元素" onclick="fun1()" id="btn01"/>
+    <input type="button" value="根据标签名获取多个元素" onclick="fun2()" id="btn02"/>
+    <input type="button" value="根据name属性值获取多个元素" name="aaa" onclick="fun3()" id="btn03"/>
+    <input type="button" value="根据class属性获取多个元素" onclick="fun4()" id="btn04"/>
+</body>
+</html>

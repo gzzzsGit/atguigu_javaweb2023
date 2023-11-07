@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         * 3   对元素进行操作
+         *      ① 操作元素的属性    元素名.属性名 = ""
+         *      ② 操作元素的样式    元素名.style.样式名 = ""    样式名"-"要进行驼峰转换
+         *      ③ 操作元素的文本     
+         *      ④ 增删元素
+        */
+
+        function changeAttribute(){
+            var input1 = document.getElementById("input1")
+            // 获得属性值
+            // 语法     元素.属性名 = ""
+            console.log(input1.type)
+            console.log(input1.value);
+
+            input1.type = "button"
+            input1.value="嗨"
+        }
+
+        function changeStyle(){
+            var input1 = document.getElementById("input1")
+            input1.style.color = "green"
+            //原来是border-radius中横式,js中要改为驼峰式
+            input1.style.borderRadius = "5px"
+        }
+
+        function changeText(){
+            var div01=document.getElementById("div01")
+            /*
+            语法
+                元素名.innerText    只识别文本
+                元素名.innerHTML    同时可以识别html代码
+            */
+           console.log(div01.innerText);//hi
+           console.log(div01.innerHTML);//<h1>hi</h1>
+           div01.innerText = "hi"
+           div01.innerHTML = "<h1>hi</h1>"
+        }
+    </script>
+
+    <style>
+        #input1 {
+            color: red;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="hello" id="input1">
+    <div id="div01">
+        hello
+    </div>
+    <hr>
+    <button onclick="changeAttribute()">操作属性</button>
+    <button onclick="changeStyle()">操作样式</button>
+    <button onclick="changeText()">操作文本</button>
+</body>
+</html>
