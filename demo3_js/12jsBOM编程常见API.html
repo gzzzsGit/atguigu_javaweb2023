@@ -103,7 +103,7 @@
 
     <button onclick="funBack()">上一页</button>
     <button onclick="funForward()">下一页</button>
-    页数：<input type="text" onchange="funSessionStorage('页数',value)">
+    页数：<input type="text" onblur="funSessionStorage('页数',value)">
     <button onclick="pagesChange(funGetSession('页数'))">跳转</button>
     <a href="http://www.baidu.com" target="_self">百度一下</a>
 
